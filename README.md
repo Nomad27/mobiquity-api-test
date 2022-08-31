@@ -1,5 +1,7 @@
 # mobiquity-api-test
 
+[![CircleCI](https://circleci.com/gh/Nomad27/mobiquity-api.svg?style=svg)](https://circleci.com/gh/Nomad27/mobiquity-api)
+
 API tests for some of the endpoints available at https://jsonplaceholder.typicode.com.
 
 #Tech stack
