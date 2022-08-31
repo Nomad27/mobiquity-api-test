@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="mobiquity-api-tests" verbose="2">
+	<test name="post-tests">
+		<parameter name="userName" value="Delphine"/>
+		<parameter name="invalidUserName" value="ThisIsSomeInvalidNameThatCanNeverBeARealName"/>
+		<parameter name="invalidUserId" value="123456"/>
+		<parameter name="invalidPostId" value="123456"/>
+		<parameter name="postTitle" value="Post title"/>
+		<parameter name="postBody" value="This is a sample post body"/>
+		<parameter name="updatedPostTitle" value="Updated post title"/>
+		<parameter name="fakePostId" value="1"/>
+		<classes>
+			<class name="PostTests">
+				<methods>
+					<include name="verifyGetAllUsers"/>
+					<include name="verifyGetUser"/>
+					<include name="verifyGetPostsByUserId"/>
+					<include name="verifyPostComments"/>
+					<include name="verifyCreatePost"/>
+					<include name="verifyUpdatePost"/>
+					<include name="verifyDeletePost"/>
+				</methods>
+			</class>
+			<class name="PostNegativeTests">
+				<methods>
+					<include name="verifyGetUserWithInvalidNameReturnsAnEmptyArray"/>
+					<include name="verifyGetPostsByInvalidUserIdReturnsAnEmptyArray"/>
+					<include name="verifyGetPostCommentsByInvalidPostIdReturnsAnEmptyArray"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
